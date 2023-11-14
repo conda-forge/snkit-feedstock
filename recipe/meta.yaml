@@ -1,5 +1,5 @@
 {% set name = "snkit" %}
-{% set version = "1.8.1" %}
+{% set version = "1.9.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/snkit-{{ version }}.tar.gz
-  sha256: b1c2f482337cc7cf185a9e312aca46deb5262578b3215714772da8b85194bed7
+  sha256: e715d608a100f54d888288e15b5a59bfbcecc863684bb47742150dd7e5171e41
 
 build:
   noarch: python
