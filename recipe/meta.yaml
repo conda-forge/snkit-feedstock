@@ -23,6 +23,9 @@ requirements:
     - python >=3.8
     - geopandas >=0.13
     - shapely >=2.0
+    - pandas
+    - numpy >=1.20
+    - pyproj
 
 test:
   imports:
