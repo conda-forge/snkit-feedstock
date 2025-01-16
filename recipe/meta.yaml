@@ -6,21 +6,22 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/snkit-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/snkit-{{ version }}.tar.gz
   sha256: e715d608a100f54d888288e15b5a59bfbcecc863684bb47742150dd7e5171e41
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.8
+    - python >={{ python_min }}
+    - setuptools
     - setuptools-scm
     - pip
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - geopandas >=0.13
     - shapely >=2.0
     - pandas
@@ -36,6 +37,7 @@ test:
   requires:
     - pip
     - pytest
+    - python {{ python_min }}
   commands:
     - pip check
     - pytest tests
